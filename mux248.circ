@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="2.7.1" version="1.0">
+This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
+<lib desc="#Wiring" name="0"/>
+  <lib desc="#Gates" name="1"/>
+  <lib desc="#Plexers" name="2"/>
+  <lib desc="#Arithmetic" name="3"/>
+  <lib desc="#Memory" name="4"/>
+  <lib desc="#I/O" name="5"/>
+  <lib desc="#Base" name="6">
+    <tool name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="SansSerif plain 20"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+  </lib>
+  <main name="main"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <mappings>
+    <tool lib="6" map="Button2" name="Menu Tool"/>
+    <tool lib="6" map="Button3" name="Menu Tool"/>
+    <tool lib="6" map="Ctrl Button1" name="Menu Tool"/>
+  </mappings>
+  <toolbar>
+    <tool lib="6" name="Poke Tool"/>
+    <tool lib="6" name="Edit Tool"/>
+    <tool lib="6" name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="SansSerif plain 20"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+    <sep/>
+    <tool lib="0" name="Pin">
+      <a name="tristate" val="false"/>
+    </tool>
+    <tool lib="0" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="labelloc" val="east"/>
+    </tool>
+    <tool lib="1" name="NOT Gate"/>
+    <tool lib="1" name="AND Gate"/>
+    <tool lib="1" name="OR Gate"/>
+  </toolbar>
+  <circuit name="main">
+    <a name="circuit" val="main"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <comp lib="6" loc="(145,102)" name="Text">
+      <a name="text" val="Multiplexeurs"/>
+      <a name="font" val="SansSerif plain 20"/>
+    </comp>
+    <comp lib="6" loc="(438,134)" name="Text">
+      <a name="text" val="Mux2 : multiplexeur de base [porte logique élémentaire], en entrée : 2 bits (+1 bit de commande) =&gt; en sortie : 1 bit."/>
+    </comp>
+    <comp lib="6" loc="(455,166)" name="Text">
+      <a name="text" val=" Mux4 : multiplexeur avec en entrée 4 bits (+2 bits de commande) =&gt; en sortie 1 bit. Circuit réalisé à partir de Mux2 (c. prec.)"/>
+    </comp>
+    <comp lib="6" loc="(293,202)" name="Text">
+      <a name="text" val="Mux8 : ébauche de multiplexeur 8 (+3) =&gt; 1 à partir de Mux4"/>
+    </comp>
+  </circuit>
+  <circuit name="mux2">
+    <a name="circuit" val="mux2"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(280,160)" to="(340,160)"/>
+    <wire from="(280,240)" to="(290,240)"/>
+    <wire from="(390,260)" to="(420,260)"/>
+    <wire from="(280,160)" to="(280,240)"/>
+    <wire from="(250,280)" to="(340,280)"/>
+    <wire from="(250,200)" to="(340,200)"/>
+    <wire from="(320,240)" to="(340,240)"/>
+    <wire from="(510,200)" to="(530,200)"/>
+    <wire from="(390,180)" to="(460,180)"/>
+    <wire from="(280,150)" to="(280,160)"/>
+    <wire from="(420,220)" to="(420,260)"/>
+    <wire from="(420,220)" to="(460,220)"/>
+    <comp lib="0" loc="(280,150)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="C"/>
+    </comp>
+    <comp lib="1" loc="(390,260)" name="AND Gate">
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="1" loc="(510,200)" name="OR Gate">
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="1" loc="(390,180)" name="AND Gate">
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="0" loc="(250,200)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="E1"/>
+    </comp>
+    <comp lib="1" loc="(320,240)" name="NOT Gate"/>
+    <comp lib="0" loc="(530,200)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="X"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(250,280)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="E0"/>
+    </comp>
+  </circuit>
+  <circuit name="mux4">
+    <a name="circuit" val="mux4"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <appear>
+      <path d="M61,51 Q65,61 69,51" fill="none" stroke="#808080" stroke-width="2"/>
+      <rect fill="none" height="60" stroke="#000000" stroke-width="2" width="30" x="50" y="50"/>
+      <circ-port height="8" pin="370,100" width="8" x="66" y="46"/>
+      <circ-port height="8" pin="170,230" width="8" x="46" y="66"/>
+      <circ-port height="8" pin="170,260" width="8" x="46" y="76"/>
+      <circ-port height="8" pin="170,310" width="8" x="46" y="86"/>
+      <circ-port height="8" pin="170,350" width="8" x="46" y="96"/>
+      <circ-port height="10" pin="460,230" width="10" x="75" y="75"/>
+      <circ-port height="8" pin="290,110" width="8" x="56" y="46"/>
+      <circ-anchor facing="east" height="6" width="6" x="77" y="77"/>
+    </appear>
+    <wire from="(360,240)" to="(360,310)"/>
+    <wire from="(290,200)" to="(320,200)"/>
+    <wire from="(290,280)" to="(320,280)"/>
+    <wire from="(250,320)" to="(310,320)"/>
+    <wire from="(410,230)" to="(460,230)"/>
+    <wire from="(340,310)" to="(360,310)"/>
+    <wire from="(360,240)" to="(380,240)"/>
+    <wire from="(370,100)" to="(390,100)"/>
+    <wire from="(320,280)" to="(320,300)"/>
+    <wire from="(320,200)" to="(320,220)"/>
+    <wire from="(170,350)" to="(250,350)"/>
+    <wire from="(290,200)" to="(290,280)"/>
+    <wire from="(170,230)" to="(310,230)"/>
+    <wire from="(170,310)" to="(310,310)"/>
+    <wire from="(240,240)" to="(240,260)"/>
+    <wire from="(170,260)" to="(240,260)"/>
+    <wire from="(240,240)" to="(310,240)"/>
+    <wire from="(250,320)" to="(250,350)"/>
+    <wire from="(390,100)" to="(390,220)"/>
+    <wire from="(340,230)" to="(380,230)"/>
+    <wire from="(290,110)" to="(290,200)"/>
+    <comp loc="(410,230)" name="mux2"/>
+    <comp loc="(340,310)" name="mux2"/>
+    <comp lib="0" loc="(170,230)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="E11"/>
+    </comp>
+    <comp lib="0" loc="(170,310)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="E10"/>
+    </comp>
+    <comp lib="0" loc="(170,260)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="E01"/>
+    </comp>
+    <comp lib="0" loc="(460,230)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="XX"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(170,350)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="E00"/>
+    </comp>
+    <comp lib="0" loc="(370,100)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="Cfaible"/>
+    </comp>
+    <comp lib="0" loc="(290,110)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="CFort"/>
+    </comp>
+    <comp loc="(340,230)" name="mux2"/>
+  </circuit>
+  <circuit name="mux8">
+    <a name="circuit" val="mux8"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(320,80)" to="(320,150)"/>
+    <wire from="(280,200)" to="(330,200)"/>
+    <wire from="(280,210)" to="(330,210)"/>
+    <wire from="(280,220)" to="(330,220)"/>
+    <wire from="(280,230)" to="(330,230)"/>
+    <wire from="(280,300)" to="(330,300)"/>
+    <wire from="(280,310)" to="(330,310)"/>
+    <wire from="(280,320)" to="(330,320)"/>
+    <wire from="(280,330)" to="(330,330)"/>
+    <wire from="(340,170)" to="(340,180)"/>
+    <wire from="(340,270)" to="(340,280)"/>
+    <wire from="(350,150)" to="(350,180)"/>
+    <wire from="(350,250)" to="(350,280)"/>
+    <wire from="(300,170)" to="(340,170)"/>
+    <wire from="(300,270)" to="(340,270)"/>
+    <wire from="(300,80)" to="(300,170)"/>
+    <wire from="(300,170)" to="(300,270)"/>
+    <wire from="(320,150)" to="(320,250)"/>
+    <wire from="(430,260)" to="(460,260)"/>
+    <wire from="(320,150)" to="(350,150)"/>
+    <wire from="(320,250)" to="(350,250)"/>
+    <wire from="(360,210)" to="(380,210)"/>
+    <wire from="(380,260)" to="(400,260)"/>
+    <wire from="(360,310)" to="(380,310)"/>
+    <wire from="(380,270)" to="(400,270)"/>
+    <wire from="(410,80)" to="(410,250)"/>
+    <wire from="(380,270)" to="(380,310)"/>
+    <wire from="(380,210)" to="(380,260)"/>
+    <comp loc="(360,310)" name="mux4"/>
+    <comp loc="(360,210)" name="mux4"/>
+    <comp loc="(430,260)" name="mux2"/>
+  </circuit>
+</project>
